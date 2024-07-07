@@ -18,10 +18,30 @@ variable "words" {
     numbers = list(number),
   })  
 
-//  validation {
-//    condition = length(var.words["nouns"]) >= 20
-//    error_message = "At least 20 nouns must be supplied."
-//  }
+  validation {
+    condition = length(var.words["nouns"]) >= 20
+    error_message = "At least 20 nouns must be supplied."
+  }
+
+  validation {
+    condition = length(var.words["adjectives"]) >= 10
+    error_message = "At least 10 adjectives must be supplied."
+  }
+
+  validation {
+    condition = length(var.words["verbs"]) >= 10
+    error_message = "At least 10 verbs must be supplied."
+  }
+
+  validation {
+    condition = length(var.words["adverbs"]) >= 10
+    error_message = "At least 10 adverbs must be supplied."
+  }
+
+  validation {
+    condition = length(var.words["numbers"]) >= 5
+    error_message = "At least 5 numbers must be supplied."
+  }
 
 }
 
